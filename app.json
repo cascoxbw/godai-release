@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/want/want",
+    "pages/want/editWant",
+    "pages/gooddetail/goodsDetail",
+    "pages/my/my"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "GO代",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#6e6d6b",
+    "selectedColor": "#e64340",
+    "borderStyle": "white",
+    "backgroundColor": "#fff",
+    "box-shadow": "0 0 6px 0",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/tabicon/home-off.png",
+        "selectedIconPath": "images/tabicon/home-on.png",
+        "text": "首页"
+      },/*
+      {
+        "pagePath": "pages/want/want",
+        "iconPath": "images/tabicon/order-off.png",
+        "selectedIconPath": "images/tabicon/order-on.png",
+        "text": "心愿单"
+      },*/
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "images/tabicon/my-off.png",
+        "selectedIconPath": "images/tabicon/my-on.png",
+        "text": "联系我们"
+      }
+      
+    ]
+  },
+  "debug": true
+}

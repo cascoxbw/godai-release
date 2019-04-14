@@ -1,0 +1,55 @@
+<view class="sec-detail">
+    <view class="sec-outer">
+      <view class="list-detail">
+        <view class="list-sec">
+          <view class="top-title">{{goodInfo['名称']}}</view>
+          <view class="pirce-wrapper">
+            <view class="inline-block now">{{goodInfo['特价']}}元</view>
+            <block wx:if = "{{goodInfo['特价'] != goodInfo['原价']}}">
+              <view class="inline-block origin">原价{{goodInfo['原价']}}</view>
+              <view class="sec-title">限时天数：{{goodInfo['限时天数']}}</view>
+            </block>
+          </view>
+
+          <block wx:if = "{{goodInfo['型号/颜色'] != 0}}">
+            <view class="sec-title">型号/颜色：{{goodInfo['型号/颜色']}}</view>
+          </block>
+
+          <block wx:if = "{{goodInfo['优惠'] != 0}}">
+            <view class="sec-title">{{goodInfo['优惠']}}</view>
+          </block>
+
+          <block wx:if = "{{goodInfo['邮费'] == 0}}">
+            <view class="sec-title">包邮</view>
+          </block>
+          <block wx:elif="{{goodInfo['邮费'] == 1}}"> 
+            <view class="sec-title">新疆、西藏等偏远地区加20元，其余地区加10元</view> 
+          </block>
+
+        </view>
+
+        <view class="item-detail">
+          <view class = "detail-title">图文详情</view>
+          <view class="detail-goods">
+
+            <block wx:for="{{goodInfo['简介']}}" wx:for-item="item" wx:for-index="index"> 
+            
+              <view class="sec-title">{{item}}</view> 
+              
+              <block wx:if="{{goodInfo['图片'][index] != null}}"> 
+                <image  class="detail-img" src="{{goodInfo['图片'][index]}}" background-size="cover" mode="widthFix"></image>
+              </block> 
+
+            </block>
+
+          </view>
+        </view>
+
+      </view>
+    </view>
+
+  <view class="buy-now">
+      <button class="rush" bindtap = "gobuy">去购买</button>
+  </view>
+   
+</view>

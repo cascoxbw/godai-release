@@ -1,0 +1,8 @@
+<view class="callus">
+  <view class="title">询问商品细节扫码加微信</view>
+  <image src="/images/qrcode/jxccode.jpg" class="code-image" bindtap="getjxcimage"/>
+  <view class="title">反馈小程序使用问题扫码加微信</view>
+  <view class="title">ps：完整商城功能如购物车系统、订单系统、微信支付系统正在持续开发中</view>
+  <view class="title">pps：小程序合作欢迎打扰</view>
+  <image src="/images/qrcode/xbwcode.jpg" class="code-image" bindtap="getxbwimage"/>
+</view>

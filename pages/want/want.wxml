@@ -1,0 +1,39 @@
+<view class="wantList-info">
+ <view class="header">
+    <view class="header-wrapper" style="width: {{length *300}}rpx">
+      <view class="single">
+          <text class="listLength">心愿个数：{{wantList.length}}</text>
+      </view>
+    </view>
+  </view>
+  <view wx:if="{{wantList.length == 0}}"> 
+    <view class="noWant">心愿待充值~</view>
+  </view>
+  <view wx:elif="{{wantList.length != 0}}">
+    <view class="list-detail" 
+          wx:for="{{wantList}}" wx:for-index="index" wx:for-item="item" data-value="{{item}}" 
+          bindlongpress="deleteWant" data-index="{{index}}">
+      <view class = "list-sec">
+        <view class="left-sec">
+          <block wx:if="{{item.pic == null}}"> 
+            <image class="sec-img" src="/images/wantpic/wants1.jpeg" background-size="cover"></image>
+          </block>
+          <block wx:elif="{{item.pic != null}}">
+            <image class="sec-img" src="{{item.pic}}" background-size="cover"></image>
+          </block>
+        </view>
+        <view class="right-sec">
+          <view class="want-name">品牌：{{item.brand}}</view>
+          <view class="want-spec">名称：{{item.name}}</view>
+          <view class="want-note">型号：{{item.size}}</view>      
+          <view class="want-time">数量：{{item.num}}</view> 
+        </view> 
+      </view>    
+    </view>
+  </view>
+</view>
+
+<view wx:if = "{{warning}}" class = "warning">{{warnDes}}</view>
+<view class="addWant"> 
+  <button class="addWant-btn" bindtap="addWant">添加心愿</button>
+</view>

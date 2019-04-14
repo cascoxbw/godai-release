@@ -1,0 +1,47 @@
+<!--index.wxml-->
+<view class="container">
+
+
+  <!-- 搜索部分开始 -->
+  <view class="search-view" style="background:white">
+    <view class="serarch-content">
+      <image src="/images/indexicon/search-pic.png" class="search-icon" />
+      <input placeholder="请输入搜索内容" class="search-input" maxlength="30" confirm-type="搜索" bindinput='listenerSearchInput' bindconfirm='toSearch'>
+      </input>
+      <button class='search-btn' bindtap="toSearch">搜索
+      </button>
+    </view>
+  </view>
+  <!-- 搜索部分结束 -->
+
+  <!-- 公告部分开始 -->
+  <view class="jxc">
+    <view class="top-slider">
+      <swiper class="slider-sec" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{noticeList}}">
+          <swiper-item>
+            <image src="{{item['图片'][0]}}" class="slide-image" width="355" height="150" data-value="{{item}}" bindtap="getDetail"/>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+    <view wx:if = "{{warning}}" class = "warning">{{warnDes}}</view>
+    <view class="list-detail" wx:for="{{GoodsList}}" wx:for-item="item"data-value="{{item}}" bindtap="getDetail">
+      <view class="list-sec">
+        <view class="left-sec">
+            <image class="sec-img" src="{{item['图片'][0]}}" background-size="cover"></image>
+        </view>
+        <view class="right-sec">
+            <view class="title">{{item['名称']}}</view>
+            <view class="description">{{item['品牌']}}</view>
+            <view class="pirce-wrapper">
+                <view class="inline-block now">￥{{item['原价']}}</view>
+            </view>
+        </view>
+      </view>
+      <view class="inline-block go-buy">查看详情</view>
+    </view>
+  </view>
+  <!-- 公告部分开始 -->
+
+</view>

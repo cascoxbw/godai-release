@@ -1,0 +1,33 @@
+<view class="addr-body">
+  <view class="top-sec">
+    <view class="input-wrapper">
+        <view class="input-title">品牌</view>
+        <input bindinput = "setBrand"  name="input" placeholder="请输入物品的品牌" placeholder-style = "color: #888888; " />
+    </view>
+    <view class="input-wrapper">
+        <view class="input-title">名称</view>
+        <input bindinput = "setName" name="input" placeholder="请输入物品的名称" placeholder-style = "color: #888888; "/>
+    </view>
+    <view class="input-wrapper">
+        <view class="input-title">型号</view>
+        <input bindinput = "setSize"  name="input" placeholder="请输入物品的型号" placeholder-style = "color: #888888; " />
+    </view>
+    <view class="input-wrapper">
+      <view class="input-title">数量</view>
+      <input bindinput = "setNum"  name="input" placeholder="请输入物品的数量" placeholder-style = "color: #888888; " />
+    </view>
+    <view class="input-wrapper">
+      <view class="input-title">样片</view>
+      <block  wx:if="{{picforshow.length == 0}}"> 
+        <button class = "addpic-btn" bindtap = "setPic">上传样片</button>
+      </block >
+      <block  wx:elif="{{picforshow.length != 0}}">
+        <image class="pic" src='{{picforshow}}'></image> 
+      </block >
+    </view>
+  </view>
+  <view class="add-address">
+      <button class = "address-btn" bindtap = "saveWant">保存</button>
+  </view>
+
+</view>
